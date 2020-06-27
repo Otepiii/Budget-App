@@ -1,12 +1,10 @@
-
-
 body {
   background-color: #222;
-  font-family: "Gilroy";
+  font-family: "Quicksand";
 }
 
 * {
-  font-family: "Gilroy";
+  font-family: "Quicksand";
   list-style: none;
   text-decoration: none;
   -webkit-user-select: none;
@@ -35,11 +33,12 @@ input[type="number"] {
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
-  background-color: #34006a;
+  background-color: #165821;
+  border-radius: 30px;
 }
 
 .budget-container .app-title {
-text-align: center;
+  text-align: center;
   margin-top: 45px;
   margin-left: 20px;
   color: #fff;
@@ -50,10 +49,11 @@ text-align: center;
   color: #fff;
 }
 .budget-container .app-title a b {
-  font-family: "Gilroy Bold";
+  font-family: "Quicksand Bold";
 }
 
 .budget-header {
+  font-family: "Quicksand Bold";
 }
 
 .budget-header .balance {
@@ -64,14 +64,14 @@ text-align: center;
 .budget-header .balance .title {
   color: #fff;
   font-size: 1em;
-  font-family: "Gilroy Bold";
+  /* font-family: "Quicksand Bold"; */
 }
 
 .budget-header .balance .value {
   color: #fff;
   font-size: 2em;
   margin-top: 10px;
-  font-family: "Gilroy Bold";
+  font-family: "Quicksand Bold";
 }
 
 .budget-header .account {
@@ -97,7 +97,7 @@ text-align: center;
 }
 .budget-header .account .income .income-total {
   color: #fff;
-  font-family: "Gilroy Bold";
+  font-family: "Quicksand Bold";
 }
 
 .budget-header .account .outcome .title {
@@ -106,7 +106,7 @@ text-align: center;
 }
 .budget-header .account .outcome .outcome-total {
   color: #f0624d;
-  font-family: "Gilroy Bold";
+  font-family: "Quicksand Bold";
 }
 
 /*/////////////   DASHBOARD    /////////////*/
@@ -116,7 +116,7 @@ text-align: center;
   height: 470px;
   background-color: #fff;
   margin-top: 35px;
-  border-radius: 30px 30px 0 0;
+  border-radius: 5px 5px 30px 30px;
 }
 
 .budget-dashboard .dash-title {
@@ -125,13 +125,20 @@ text-align: center;
   font-size: 1.7em;
   margin-left: 20px;
   margin-top: 30px;
-  font-family: "Gilroy Bold";
+  font-weight: bolder;
+  /* font-family: "Quicksand Bold"; */
 }
 
 .toggle {
   display: block;
   margin-top: 30px;
   margin-left: 20px;
+}
+
+.toggle .active {
+  color: #000000;
+  font-weight: 700;
+  opacity: 1 !important;
 }
 
 .toggle .tab1,
@@ -141,8 +148,8 @@ text-align: center;
   cursor: pointer;
   font-size: 1.1em;
   color: #1a0034;
-  font-family: "Gilroy Bold";
-  opacity: 0.4;
+  /* font-family: "Quicksand Bold"; */
+  opacity: 0.5;
 }
 
 .toggle .tab2,
@@ -199,7 +206,7 @@ text-align: center;
   padding-left: 20px;
   margin-bottom: 10px;
   word-wrap: break-word;
-  font-family: "Gilroy Bold";
+  font-family: "Quicksand Bold";
 }
 
 .budget-dashboard #all ul.list li #edit {
@@ -248,7 +255,7 @@ text-align: center;
   width: 150px;
   padding-left: 10px;
   font-size: 1.2em;
-  font-family: "Gilroy";
+  font-family: "Quicksand";
   margin: 5px;
   margin-left: 10px;
   border-radius: 10px 0 0 10px;
@@ -260,7 +267,7 @@ text-align: center;
   width: 110px;
   padding-left: 10px;
   font-size: 1.2em;
-  font-family: "Gilroy";
+  font-family: "Quicksand";
   margin: 5px;
   margin-left: -10px;
   border-radius: 0 10px 10px 0;
@@ -300,7 +307,7 @@ text-align: center;
   padding-left: 20px;
   margin-bottom: 10px;
   word-wrap: break-word;
-  font-family: "Gilroy Bold";
+  font-family: "Quicksand Bold";
   color: #f0624d;
 }
 
@@ -351,7 +358,7 @@ text-align: center;
   width: 150px;
   padding-left: 10px;
   font-size: 1.2em;
-  font-family: "Gilroy";
+  font-family: "Quicksand";
   margin: 5px;
   margin-left: 10px;
   border-radius: 10px 0 0 10px;
@@ -363,7 +370,7 @@ text-align: center;
   width: 110px;
   padding-left: 10px;
   font-size: 1.2em;
-  font-family: "Gilroy";
+  font-family: "Quicksand";
   margin: 5px;
   margin-left: -10px;
   border-radius: 0 10px 10px 0;
@@ -403,7 +410,7 @@ text-align: center;
   padding-left: 20px;
   margin-bottom: 10px;
   word-wrap: break-word;
-  font-family: "Gilroy Bold";
+  font-family: "Quicksand Bold";
 }
 
 .budget-dashboard #income ul.list li #edit {
