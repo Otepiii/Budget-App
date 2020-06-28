@@ -67,7 +67,7 @@ addExpense.addEventListener("click", function () {
   ENTRY_LIST.push(expense);
 
   updateUI();
-  clearInput([incomeTitle.value, incomeAmount.value]);
+  clearInput([expenseTitle.value, expenseAmount.value]);
 });
 
 addIncome.addEventListener("click", function () {
@@ -104,6 +104,27 @@ function inactive(elements) {
   elements.forEach((element) => {
     element.classList.remove("active");
   });
+}
+
+function updateUI() {
+  income = calculateTotal("income", ENTRY_LIST);
+  outcome = calculateTotal("outcome", ENTRY_LIST);
+  balance = calculateBalance(income, outcome);
+}
+
+function calculateTotal(type, list) {
+  let sum = 0;
+
+  list.forEach((entry) => {
+    if (entry.type == type) {
+      sum += entry.amount;
+    }
+  });
+  return sum;
+}
+
+function calculateBalance(income, outcome) {
+  return income - outcome;
 }
 
 function clearInput(inputs) {
