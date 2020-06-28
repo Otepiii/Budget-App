@@ -65,6 +65,9 @@ addExpense.addEventListener("click", function () {
     amount: expenseAmount.value,
   };
   ENTRY_LIST.push(expense);
+
+  updateUI();
+  clearInput([incomeTitle.value, incomeAmount.value]);
 });
 
 addIncome.addEventListener("click", function () {
@@ -77,6 +80,7 @@ addIncome.addEventListener("click", function () {
     amount: incomeAmount.value,
   };
   ENTRY_LIST.push(income);
+
   updateUI();
   clearInput([incomeTitle.value, incomeAmount.value]);
 });
