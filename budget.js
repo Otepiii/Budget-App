@@ -67,7 +67,7 @@ addExpense.addEventListener("click", function () {
   ENTRY_LIST.push(expense);
 
   updateUI();
-  clearInput([expenseTitle.value, expenseAmount.value]);
+  clearInput([expenseTitle, expenseAmount]);
 });
 
 addIncome.addEventListener("click", function () {
@@ -82,7 +82,7 @@ addIncome.addEventListener("click", function () {
   ENTRY_LIST.push(income);
 
   updateUI();
-  clearInput([incomeTitle.value, incomeAmount.value]);
+  clearInput([incomeTitle, incomeAmount]);
 });
 
 // Helpers
@@ -110,6 +110,38 @@ function updateUI() {
   income = calculateTotal("income", ENTRY_LIST);
   outcome = calculateTotal("outcome", ENTRY_LIST);
   balance = calculateBalance(income, outcome);
+
+  clearElement([expenseList,incomeList,allList]);
+
+  // Determine sign of balance
+  let sign = (income >= outcome)? "$" : "-$";
+
+  ENTRY_LIST.forEach((entry,index) => {
+    if(entry.type == "expense"){
+      showEntry(expenseList,entry.type, entry.title, entry.amount, index)
+    }else if (entry.type == "income"){
+      showEntry(incomeList,entry.type, entry.title, entry.amount, index)
+    } (entry.type == "all")
+      showEntry(allList,entry.type, entry.title, entry.amount, index)
+  })
+}
+
+function showEntry(list,type,title,amount,id){
+  const entry = `<li id="${id}" class="${type}">
+                  <div class="entry"> ${title}:$${amount}</div>
+                  <div id="edit"><i class="far fa-edit"></i></div>
+                  <div id="delete"><i class="far fa-trash-alt"></i></div>
+  </li>`
+
+  const position = "afterbegin";
+
+  list.insertAdjacentHTML(position,entry)
+}
+
+function clearElement(elements){
+  elements.forEach(element => {
+    element.innerHTML = "";
+  })
 }
 
 function calculateTotal(type, list) {
