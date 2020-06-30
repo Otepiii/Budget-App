@@ -29,12 +29,12 @@ input[type="number"] {
 .budget-container {
   position: absolute;
   width: 360px;
-  height: 780px;
+  height: 798px;
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
   background-color: #165821;
-  border-radius: 30px;
+  border-radius: 30px 30px 10px 10px;
 }
 
 .budget-container .app-title {
@@ -116,7 +116,6 @@ input[type="number"] {
   height: 470px;
   background-color: #fff;
   margin-top: 35px;
-  border-radius: 5px 5px 30px 30px;
 }
 
 .budget-dashboard .dash-title {
@@ -257,7 +256,6 @@ input[type="number"] {
   font-family: "Quicksand";
   margin: 5px;
   margin-left: 10px;
-  border-radius: 10px 0 0 10px;
   border: none;
 }
 
@@ -269,7 +267,6 @@ input[type="number"] {
   font-family: "Quicksand";
   margin: 5px;
   margin-left: -10px;
-  border-radius: 0 10px 10px 0;
   border: none;
 }
 
@@ -358,7 +355,6 @@ input[type="number"] {
   font-family: "Quicksand";
   margin: 5px;
   margin-left: 10px;
-  border-radius: 10px 0 0 10px;
   border: none;
 }
 
@@ -370,7 +366,6 @@ input[type="number"] {
   font-family: "Quicksand";
   margin: 5px;
   margin-left: -10px;
-  border-radius: 0 10px 10px 0;
   border: none;
 }
 
@@ -416,7 +411,6 @@ input[type="number"] {
   height: 20px;
   right: 50px;
   cursor: pointer;
-  background-image: url("icon/edit.png");
   background-size: 20px 20px;
   background-repeat: no-repeat;
 }
@@ -427,7 +421,11 @@ input[type="number"] {
   height: 20px;
   right: 20px;
   cursor: pointer;
-  background-image: url("icon/trash.png");
   background-size: 20px 20px;
   background-repeat: no-repeat;
+}
+
+/* input focus */
+textarea:focus, input:focus{
+  outline: none;
 }

@@ -62,7 +62,7 @@ addExpense.addEventListener("click", function () {
   let expense = {
     type: "expense",
     title: expenseTitle.value,
-    amount: expenseAmount.value,
+    amount: parseFloat(expenseAmount.value),
   };
   ENTRY_LIST.push(expense);
 
@@ -77,7 +77,7 @@ addIncome.addEventListener("click", function () {
   let income = {
     type: "income",
     title: incomeTitle.value,
-    amount: incomeAmount.value,
+    amount: parseFloat(incomeAmount.value),
   };
   ENTRY_LIST.push(income);
 
@@ -108,13 +108,18 @@ function inactive(elements) {
 
 function updateUI() {
   income = calculateTotal("income", ENTRY_LIST);
-  outcome = calculateTotal("outcome", ENTRY_LIST);
-  balance = calculateBalance(income, outcome);
-
-  clearElement([expenseList,incomeList,allList]);
+  outcome = calculateTotal("expense", ENTRY_LIST);
+  balance = Math.abs(calculateBalance(income, outcome));
 
   // Determine sign of balance
   let sign = (income >= outcome)? "$" : "-$";
+
+  // update header elements
+  balanceEl.innerHTML= `<small>${sign}</small>${balance}`;
+  incomeTotal.innerHTML = `<small>$</small>${income}`;
+  outcomeTotal.innerHTML = `<small>$</small>${outcome}`;
+
+  clearElement([expenseList,incomeList,allList]);
 
   ENTRY_LIST.forEach((entry,index) => {
     if(entry.type == "expense"){
