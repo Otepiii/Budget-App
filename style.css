@@ -427,5 +427,5 @@ input[type="number"] {
 
 /* input focus */
 textarea:focus, input:focus{
-  outline: none;
+    outline: none;
 }
