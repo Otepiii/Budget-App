@@ -33,7 +33,11 @@ input[type="number"] {
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
+  background: linear-gradient(rgba(17, 68, 20, .999999), rgba(26, 104, 49, 0.87)), url("img/unrecognizable-man-holding-wallet-with-money-4386421.jpg");
   background-color: #165821;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: 480px;
   border-radius: 30px 30px 10px 10px;
 }
 
@@ -71,7 +75,7 @@ input[type="number"] {
   color: #fff;
   font-size: 2em;
   margin-top: 10px;
-  font-family: "Quicksand Bold";
+  font-weight: bolder;
 }
 
 .budget-header .account {
@@ -97,7 +101,7 @@ input[type="number"] {
 }
 .budget-header .account .income .income-total {
   color: #fff;
-  font-family: "Quicksand Bold";
+  font-weight: bold;
 }
 
 .budget-header .account .outcome .title {
@@ -106,7 +110,7 @@ input[type="number"] {
 }
 .budget-header .account .outcome .outcome-total {
   color: #f0624d;
-  font-family: "Quicksand Bold";
+  font-weight: bold;
 }
 
 /*/////////////   DASHBOARD    /////////////*/
@@ -115,6 +119,11 @@ input[type="number"] {
   width: 360px;
   height: 470px;
   background-color: #fff;
+  background: linear-gradient(rgba(253, 253, 253, 1), rgba(255, 255, 255, 0.87)), url("img/official-currency-united-states-of-america-4386404.jpg");
+  background-color: #165821;
+  background-position:top;
+  background-repeat: no-repeat;
+  background-size: 800px;
   margin-top: 35px;
 }
 
@@ -205,7 +214,7 @@ input[type="number"] {
   padding-left: 20px;
   margin-bottom: 10px;
   word-wrap: break-word;
-  font-family: "Quicksand Bold";
+  font-weight: bold;
 }
 
 .budget-dashboard #all ul.list li #edit {
@@ -271,8 +280,8 @@ input[type="number"] {
 }
 
 .budget-dashboard #expense .input .add-expense img {
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   cursor: pointer;
 }
 
@@ -303,7 +312,7 @@ input[type="number"] {
   padding-left: 20px;
   margin-bottom: 10px;
   word-wrap: break-word;
-  font-family: "Quicksand Bold";
+  font-weight: bold;
   color: #f0624d;
 }
 
@@ -370,9 +379,11 @@ input[type="number"] {
 }
 
 .budget-dashboard #income .input .add-income img {
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   cursor: pointer;
+  background-color: #165821;
+
 }
 
 .budget-dashboard #income ul {
@@ -402,7 +413,7 @@ input[type="number"] {
   padding-left: 20px;
   margin-bottom: 10px;
   word-wrap: break-word;
-  font-family: "Quicksand Bold";
+  font-weight: bold;
 }
 
 .budget-dashboard #income ul.list li #edit {
@@ -428,4 +439,24 @@ input[type="number"] {
 /* input focus */
 textarea:focus, input:focus{
     outline: none;
+}
+
+
+.fa-plus-square:before {
+    background: #fff;
+    border-radius: 5px;
+    color: #165821;
+   
+}
+
+.fa-trash-alt {
+  color:#f5816f;;
+}
+
+.fa-edit{
+  color: #165821;
+}
+
+.input {
+  background-color: white;
 }
