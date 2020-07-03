@@ -89,7 +89,30 @@ addIncome.addEventListener("click", function () {
   clearInput([incomeTitle, incomeAmount]);
 });
 
+incomeList.addEventListener("click", deleteOrEdit);
+expenseList.addEventListener("click", deleteOrEdit);
+allList.addEventListener("click", deleteOrEdit);
+
 // Helpers
+
+function deleteOrEdit(event){
+  const targetBtn = event.target;
+
+  const entry = targetBtn.parentNode;
+
+  if( targetBtn.id == DELETE){
+    deleteEntry(entry);
+  }else if (targetBtn == EDIT){
+    editEntry(entry);
+  }
+}
+
+function deleteEntry(entry){
+  ENTRY_LIST.splice(entry.id, 1);
+
+  updateUI();
+}
+
 function show(element) {
   element.classList.remove("hide");
 }
@@ -143,8 +166,8 @@ function updateUI() {
 function showEntry(list,type,title,amount,id){
   const entry = `<li id="${id}" class="${type}">
                   <div class="entry"> ${title}:$${amount}</div>
-                  <div id="edit"><i class="far fa-edit"></i></div>
-                  <div id="delete"><i class="far fa-trash-alt"></i></div>
+                  <div><i class="far fa-edit" id="edit"></i></div>
+                  <div><i class="far fa-trash-alt" id="delete"></i></div>
   </li>`
 
   const position = "afterbegin";
