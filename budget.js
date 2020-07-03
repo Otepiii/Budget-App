@@ -102,7 +102,7 @@ function deleteOrEdit(event){
 
   if( targetBtn.id == DELETE){
     deleteEntry(entry);
-  }else if (targetBtn == EDIT){
+  }else if (targetBtn.id == EDIT){
     editEntry(entry);
   }
 }
@@ -111,6 +111,20 @@ function deleteEntry(entry){
   ENTRY_LIST.splice(entry.id, 1);
 
   updateUI();
+}
+
+function editEntry(entry){
+  let ENTRY = ENTRY_LIST[entry.id];
+
+  if(ENTRY.type == "income"){
+    incomeAmount.value = entry.amount;
+    incomeTitle.value = entry.title;
+  }else if(ENTRY.type == "expense"){
+    expenseAmount.value = entry.amount;
+    expenseTitle.value = entry.title;
+  }
+
+  deleteEntry(entry);
 }
 
 function show(element) {
@@ -166,8 +180,8 @@ function updateUI() {
 function showEntry(list,type,title,amount,id){
   const entry = `<li id="${id}" class="${type}">
                   <div class="entry"> ${title}:$${amount}</div>
-                  <div><i class="far fa-edit" id="edit"></i></div>
-                  <div><i class="far fa-trash-alt" id="delete"></i></div>
+                  <i class="far fa-edit" id="edit"></i>
+                  <i class="far fa-trash-alt" id="delete"></i>
   </li>`
 
   const position = "afterbegin";
